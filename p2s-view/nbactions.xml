@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>run</actionName>
+            <goals>
+                <goal>package</goal>
+                
+            </goals>
+            <properties>
+                <netbeans.deploy>true</netbeans.deploy>
+            </properties>
+        </action>
+        <action>
+            <actionName>CUSTOM-Build Widgeset</actionName>
+            <displayName>Build Widgeset</displayName>
+            <goals>
+                <goal>vaadin:update-widgetset</goal>
+                
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-Update Widgetset</actionName>
+            <displayName>Update Widgetset</displayName>
+            <goals>
+                <goal>gwt:compile</goal>
+            </goals>
+        </action>
+    </actions>

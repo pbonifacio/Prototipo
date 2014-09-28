@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" >
+<log4j:configuration>
+    
+    <appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                value="[%d{ISO8601}] %-5p [%c] %m %n" />
+        </layout>
+    </appender>
+     
+    <appender name="STDERR" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.err" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                value="[%d{ISO8601}] %-5p [%c] %m %n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="ERROR" />
+            <param name="LevelMax" value="FATAL" />
+        </filter>
+    </appender>
+     
+    <appender name="WEB_LOG"
+        class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="C:/logs/web.log" />
+        <param name="Append" value="true" />
+        <param name="MaxFileSize" value="500KB" />
+        <param name="MaxBackupIndex" value="10" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                value="[%d{ISO8601}] %-5p [%c] %m%n" />
+        </layout>
+    </appender>
+    
+    <appender name="CLUSTERING_LOG"
+        class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="C:/logs/clustering.log" />
+        <param name="Append" value="true" />
+        <param name="MaxFileSize" value="50000KB" />
+        <param name="MaxBackupIndex" value="10" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                value="[%d{ISO8601}] %-5p [%c] %m%n" />
+        </layout>
+    </appender>
+    
+    <appender name="ERROR_LOG"
+        class="org.apache.log4j.RollingFileAppender">
+        <param name="Target" value="System.err" />
+        <param name="File" value="C:/logs/error.log" />
+        <param name="Append" value="true" />
+        <param name="MaxFileSize" value="500KB" />
+        <param name="MaxBackupIndex" value="10" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                value="[%d{ISO8601}] %-5p [%c] %m %n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="ERROR" />
+            <param name="LevelMax" value="FATAL" />
+        </filter>
+    </appender>
+ 
+    <logger name="com.app.plan2see">
+        <level value="info" />
+        <appender-ref ref="WEB_LOG" />
+        <appender-ref ref="STDOUT" />
+    </logger>
+    
+    <root>
+        <level value="FATAL" />
+        <appender-ref ref="STDERR" />
+        <appender-ref ref="ERROR_LOG" /> 
+    </root>
+ 
+</log4j:configuration>

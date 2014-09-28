@@ -1,0 +1,25 @@
+<t:layout xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+    <div class="user ">
+        ${message}
+    </div>
+    <br/>
+    <pre>
+    Welcome to Plan2See!
+    
+    A MSc dissertation on profiling web users for the Open Source Software Master @ ISCTE-IUL. 
+    The purpose is to arrange better mechanisms to group web users interests, using Text Mining.
+    </pre>
+    <br/>
+    <br/>
+    <br/>
+    Please select your preferred events by clicking "Select". If that subject does not meets
+    your preferences, or if you found other that suits you better, please click "Unselect".
+    <br/>
+    <br/>
+    <br/>
+    The engine will take care of everything - you just have to present your choices!
+    <br/>
+    <br/>
+    Many thanks,
+    Pedro Bonifácio Costa
+</t:layout>
